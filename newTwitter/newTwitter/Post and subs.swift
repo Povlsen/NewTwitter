@@ -3,7 +3,7 @@
 // Lav user class og udskift
 import Foundation
 
-//var loggedInUser:User
+var loggedInUser:User
 
 enum PostType{
     case retweet, comment, original
@@ -13,7 +13,7 @@ class Post {
     var likes: Int = 0
     var retweets: Int = 0
     var comments: Int = 0
-    //var poster: User = loggedInUser
+    var poster: User = loggedInUser
     var type: PostType
     var parent: Post?
     var mostRecentEventPost: Post?
@@ -21,7 +21,7 @@ class Post {
         self.type = type
     }
     func getPoster() -> User {
-        
+        return poster
     }
 
 }
