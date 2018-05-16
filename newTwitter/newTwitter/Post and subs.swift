@@ -20,6 +20,10 @@ class Post {
     init(type: PostType){
         self.type = type
     }
+    func getPoster() -> User {
+        
+    }
+
 }
 
 class Text : Post{
