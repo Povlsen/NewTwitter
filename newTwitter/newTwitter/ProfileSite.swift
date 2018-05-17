@@ -15,10 +15,10 @@ class ProfileSite {
     init(user: User) {
         self.user = user
     }
-    func userName(){
-        user.getName()
+    func userName() -> String{
+        return user.getName()
     }
-    func profilePicture(){
-        user.getProfilePicture
+    func profilePicture() -> String{
+        return user.getProfilePicture()
     }
 }
