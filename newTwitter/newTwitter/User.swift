@@ -89,6 +89,10 @@ class User {
         
         return state.success
     }
+    
+    func getEmail() -> String {
+        return self.email
+    }
 
     func setName(name: String) -> state {
         if name.count <= 0 {
@@ -99,11 +103,23 @@ class User {
         return state.success
     }
     
+    func getName() -> String {
+        return self.name
+    }
+    
     func setProfileSite(profileSite: ProfileSite) {
         self.profileSite = profileSite
     }
     
+    func getProfileSite() -> ProfileSite {
+        return self.profileSite
+    }
+    
     func setProfilePicture(profilePicture: File) {
         self.profilePicture = profilePicture
+    }
+    
+    func getProfilePicture() -> String {
+        return self.profilePicture?
     }
 }
