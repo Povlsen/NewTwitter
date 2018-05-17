@@ -20,6 +20,10 @@ class Post {
     init(type: PostType){
         self.type = type
     }
+    func getPoster() -> User {
+        return poster
+    }
+
 }
 
 class Text : Post{
@@ -28,6 +32,12 @@ class Text : Post{
         self.text = text
         super.init(type:type)
     }
+    func getText () -> String{
+        return text
+    }
+    func setText(text: String) -> Void{
+        self.text = text
+    }
 }
 
 class Photo : Post{
@@ -35,6 +45,12 @@ class Photo : Post{
     init(file: File, type: PostType){
         self.file = file
         super.init(type: type)
+    }
+    func getFile () -> File{
+        return file
+    }
+    func setFile(file: File) -> Void{
+        self.file = file
     }
 }
 
@@ -45,6 +61,18 @@ class TextPhoto : Post{
         self.text = text
         self.file = file
         super.init(type: type)
+    }
+    func getText () -> String{
+        return text
+    }
+    func setText(text: String) -> Void{
+        self.text = text
+    }
+    func getFile () -> File{
+        return file
+    }
+    func setFile(file: File) -> Void{
+        self.file = file
     }
 }
 
