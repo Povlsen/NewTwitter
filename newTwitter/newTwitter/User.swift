@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum state { case success, passwordNotStrong, emtyUserName, emtyEmail, emtyName }
+enum state { case success, passwordNotStrong, emtyUserName, emtyEmail, emtyName, passwordDontMatch, passwordNotCorrect, oldPasswordNotCorrect }
 
 class User {
     var errors : [state] = []
@@ -17,22 +17,26 @@ class User {
     private var password: String = String()
     private var email: String = String()
     private var name: String = String()
+    private var profilePicture: File?
+    private var profileSite: ProfileSite
     
-    //private var profilePicture: File
-    //private var profileSite: ProfileSite
-    
-    init?(userName: String, password: String, email: String, name: String) {
+    init?(userName: String, password: String, password2: String, email: String, name: String, profilePicture: File?, profileSite:ProfileSite) {
         let userNameError = self.setUserName(userName: userName)
         if userNameError != .success {errors.append(userNameError)}
         
-        let passwordError = self.setPassword(password: password)
-        if passwordError != .success {errors.append(passwordError)}
+        let passwordErrors = self.isPasswordValid(password: password, password2: password2)
+        if passwordErrors.count <= 0 {
+            self.password = password
+        } else { errors.append(contentsOf: passwordErrors) }
         
         let emailError = self.setEmail(email: email)
         if emailError != .success {errors.append(emailError)}
         
         let nameError = self.setName(name: name)
         if nameError != .success {errors.append(nameError)}
+        
+        self.profileSite = profileSite
+        self.profilePicture = profilePicture
         
         if errors.count > 0 {return nil}
     }
@@ -46,13 +50,35 @@ class User {
         return state.success
     }
     
-    func setPassword(password: String) -> state {
+    func getUserName() -> String {
+        return self.userName
+    }
+    
+    private func isPasswordValid(password:String, password2:String) -> [state] {
+        var errors:[state] = []
         if password.count <= 0 {
-            return state.passwordNotStrong
+            errors.append(state.passwordNotStrong)
         }
-        self.password = password
+        if password != password2 {
+            errors.append(.passwordDontMatch)
+        }
         
-        return state.success
+        return errors
+    }
+    
+    func changePassword(oldPassword:String, newPassword:String, newPassword2:String) -> [state] {
+        var errors:[state] = []
+        if self.password != oldPassword {
+            errors.append(.oldPasswordNotCorrect)
+        }
+        
+        errors.append(contentsOf: self.isPasswordValid(password: newPassword, password2: newPassword2))
+        
+        if errors.count <= 0 {
+            self.password = newPassword
+        }
+        
+        return errors
     }
     
     func setEmail(email: String) -> state {
@@ -63,13 +89,37 @@ class User {
         
         return state.success
     }
+    
+    func getEmail() -> String {
+        return self.email
+    }
 
     func setName(name: String) -> state {
         if name.count <= 0 {
             return state.emtyName
         }
         self.name = name
-        
+
         return state.success
+    }
+    
+    func getName() -> String {
+        return self.name
+    }
+    
+    func setProfileSite(profileSite: ProfileSite) {
+        self.profileSite = profileSite
+    }
+    
+    func getProfileSite() -> ProfileSite {
+        return self.profileSite
+    }
+    
+    func setProfilePicture(profilePicture: File) {
+        self.profilePicture = profilePicture
+    }
+    
+    func getProfilePicture() -> String {
+        return self.profilePicture?
     }
 }
