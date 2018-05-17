@@ -26,7 +26,7 @@ class File {
     }
     
     func getFullPath() -> String {
-        return (self.server.getServer += self.share.getShare += self.path += self.fileName)
+        return "\(self.server.getServer)\(self.share.getShare)\(self.path)\(self.fileName)"
     }
 }
 
