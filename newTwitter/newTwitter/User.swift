@@ -21,6 +21,9 @@ class User {
     private var profileSite: ProfileSite
     
     init?(userName: String, password: String, password2: String, email: String, name: String, profilePicture: File?, profileSite:ProfileSite) {
+        self.profileSite = profileSite
+        self.profilePicture = profilePicture
+        
         let userNameError = self.setUserName(userName: userName)
         if userNameError != .success {errors.append(userNameError)}
         
@@ -35,8 +38,7 @@ class User {
         let nameError = self.setName(name: name)
         if nameError != .success {errors.append(nameError)}
         
-        self.profileSite = profileSite
-        self.profilePicture = profilePicture
+        
         
         if errors.count > 0 {return nil}
     }
@@ -120,6 +122,6 @@ class User {
     }
     
     func getProfilePicture() -> String {
-        return self.profilePicture?
+        return self.profilePicture?.getFullPath() ?? ""
     }
 }
