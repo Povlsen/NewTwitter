@@ -11,5 +11,14 @@ import Foundation
 class ProfileSite {
     private var user:User
     private var bannerPicture:File?
-    private var tweets:[Post]
+    private var tweets:[Post] = []
+    init(user: User) {
+        self.user = user
+    }
+    func userName(){
+        user.getName()
+    }
+    func profilePicture(){
+        user.getProfilePicture
+    }
 }
