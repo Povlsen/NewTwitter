@@ -15,22 +15,44 @@ class Post {
     var type: PostType
     var parent: Post?
     var mostRecentEventPost: Post?
-    init(type: PostType, poster: User){
+    
+    init(type: PostType, poster: User) {
         self.type = type
         self.poster = poster
     }
+    
+    convenience init(type: PostType, poster: User, parrentPost: Post) {
+        self.init(type: type, poster: poster)
+        self.parent = parrentPost
+    }
+    
     func getPoster() -> User {
         return poster
+    }
+    
+    func rePost(text: String?, rePoster: User) {
+        if let t = text {
+            Text(text: t, type: .retweet, poster: rePoster)
+        } else {
+            Post(type: .retweet, poster: rePoster, parrentPost: self)
+        }
+        
     }
 
 }
 
-class Text : Post{
+class Text : Post {
     var text: String
     init(text: String, type: PostType, poster: User){
         self.text = text
         super.init(type:type, poster: poster)
     }
+    
+    convenience init(text: String, type: PostType, poster: User, parrentPost: Post) {
+        self.init(text: text, type: type, poster: poster)
+        super.parent = parrentPost
+    }
+    
     func getText () -> String{
         return text
     }
@@ -53,7 +75,7 @@ class Photo : Post{
     }
 }
 
-class TextPhoto : Post{
+class TextPhoto : Post {
     var file: File
     var text: String
     init(text: String, file: File, type: PostType, poster: User) {
