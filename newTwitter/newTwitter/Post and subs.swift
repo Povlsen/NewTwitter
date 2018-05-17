@@ -9,7 +9,7 @@ enum PostType{
 
 class Post {
     var likes: Int = 0
-    var retweets: Int = 0
+    var rePosts: Int = 0
     var comments: Int = 0
     var poster: User
     var type: PostType
