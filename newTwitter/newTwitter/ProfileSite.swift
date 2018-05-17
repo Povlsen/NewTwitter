@@ -19,6 +19,6 @@ class ProfileSite {
         user.getName()
     }
     func profilePicture(){
-        user.getProfilPicture
+        user.getProfilePicture
     }
 }
