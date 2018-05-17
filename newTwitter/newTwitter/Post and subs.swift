@@ -35,17 +35,17 @@ class Text : Post{
 }
 
 class Photo : Post{
-    var file: String
-    init(file: String, type: PostType){
+    var file: File
+    init(file: File, type: PostType){
         self.file = file
         super.init(type: type)
     }
 }
 
 class TextPhoto : Post{
-    var file: String
+    var file: File
     var text: String
-    init(text: String, file: String, type: PostType) {
+    init(text: String, file: File, type: PostType) {
         self.text = text
         self.file = file
         super.init(type: type)
