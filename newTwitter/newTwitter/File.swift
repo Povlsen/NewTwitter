@@ -24,6 +24,10 @@ class File {
         self.fileName = fileName
         self.type = type
     }
+    
+    func getFullPath() -> String {
+        return "\(self.server.getServer)\(self.share.getShare)\(self.path)\(self.fileName)"
+    }
 }
 
 class FileType {
