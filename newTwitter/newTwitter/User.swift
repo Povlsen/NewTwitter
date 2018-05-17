@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum state { case success, passwordNotStrong, emtyUserName, emtyEmail, emtyName, passwordDontMatch, passwordNotCorrect, oldPasswordNotCorrect }
+enum error { case success, passwordNotStrong, emtyUserName, emtyEmail, emtyName, passwordDontMatch, passwordNotCorrect, oldPasswordNotCorrect }
 
 class User {
-    var errors : [state] = []
+    var errors : [error] = []
     
     private var userName: String = String()
     private var password: String = String()
@@ -43,23 +43,23 @@ class User {
         if errors.count > 0 {return nil}
     }
     
-    func setUserName(userName: String) -> state {
+    func setUserName(userName: String) -> error {
         if userName.count <= 0 {
-            return state.emtyUserName
+            return error.emtyUserName
         }
         self.userName = userName
         
-        return state.success
+        return error.success
     }
     
     func getUserName() -> String {
         return self.userName
     }
     
-    private func isPasswordValid(password:String, password2:String) -> [state] {
-        var errors:[state] = []
+    private func isPasswordValid(password:String, password2:String) -> [error] {
+        var errors:[error] = []
         if password.count <= 0 {
-            errors.append(state.passwordNotStrong)
+            errors.append(error.passwordNotStrong)
         }
         if password != password2 {
             errors.append(.passwordDontMatch)
@@ -68,8 +68,8 @@ class User {
         return errors
     }
     
-    func changePassword(oldPassword:String, newPassword:String, newPassword2:String) -> [state] {
-        var errors:[state] = []
+    func changePassword(oldPassword:String, newPassword:String, newPassword2:String) -> [error] {
+        var errors:[error] = []
         if self.password != oldPassword {
             errors.append(.oldPasswordNotCorrect)
         }
@@ -83,26 +83,26 @@ class User {
         return errors
     }
     
-    func setEmail(email: String) -> state {
+    func setEmail(email: String) -> error {
         if email.count <= 0 {
-            return state.emtyEmail
+            return error.emtyEmail
         }
         self.email = email
         
-        return state.success
+        return error.success
     }
     
     func getEmail() -> String {
         return self.email
     }
 
-    func setName(name: String) -> state {
+    func setName(name: String) -> error {
         if name.count <= 0 {
-            return state.emtyName
+            return error.emtyName
         }
         self.name = name
 
-        return state.success
+        return error.success
     }
     
     func getName() -> String {
