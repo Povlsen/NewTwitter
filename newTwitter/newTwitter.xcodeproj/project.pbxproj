@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		FF4C207920AC2E4B002FFBE6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C207820AC2E4B002FFBE6 /* main.swift */; };
+<<<<<<< HEAD
 		FF88CEE520AD553E00C7F8A8 /* Post and subs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF88CEE420AD553E00C7F8A8 /* Post and subs.swift */; };
 		FF88CEE720AD555A00C7F8A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF88CEE620AD555A00C7F8A8 /* User.swift */; };
+=======
+		FFB4F4B720AC3A8B00BEB8EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4F4B620AC3A8B00BEB8EF /* User.swift */; };
+		FFB4F4C020AD57DE00BEB8EF /* Post and subs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4F4BE20AD57DE00BEB8EF /* Post and subs.swift */; };
+		FFB4F4C120AD57DE00BEB8EF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4F4BF20AD57DE00BEB8EF /* File.swift */; };
+>>>>>>> DEV
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,8 +33,14 @@
 /* Begin PBXFileReference section */
 		FF4C207520AC2E4B002FFBE6 /* newTwitter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = newTwitter; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4C207820AC2E4B002FFBE6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		FF88CEE420AD553E00C7F8A8 /* Post and subs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post and subs.swift"; sourceTree = "<group>"; };
 		FF88CEE620AD555A00C7F8A8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+=======
+		FFB4F4B620AC3A8B00BEB8EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FFB4F4BE20AD57DE00BEB8EF /* Post and subs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post and subs.swift"; sourceTree = "<group>"; };
+		FFB4F4BF20AD57DE00BEB8EF /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+>>>>>>> DEV
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +73,13 @@
 		FF4C207720AC2E4B002FFBE6 /* newTwitter */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				FF88CEE620AD555A00C7F8A8 /* User.swift */,
 				FF88CEE420AD553E00C7F8A8 /* Post and subs.swift */,
+=======
+				FFB4F4BF20AD57DE00BEB8EF /* File.swift */,
+				FFB4F4BE20AD57DE00BEB8EF /* Post and subs.swift */,
+>>>>>>> DEV
 				FF4C207820AC2E4B002FFBE6 /* main.swift */,
 				FFB4F4B620AC3A8B00BEB8EF /* User.swift */,
 			);
@@ -127,7 +144,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				FF88CEE520AD553E00C7F8A8 /* Post and subs.swift in Sources */,
+=======
+				FFB4F4B720AC3A8B00BEB8EF /* User.swift in Sources */,
+				FFB4F4C120AD57DE00BEB8EF /* File.swift in Sources */,
+				FFB4F4C020AD57DE00BEB8EF /* Post and subs.swift in Sources */,
+>>>>>>> DEV
 				FF4C207920AC2E4B002FFBE6 /* main.swift in Sources */,
 				FF88CEE720AD555A00C7F8A8 /* User.swift in Sources */,
 			);
