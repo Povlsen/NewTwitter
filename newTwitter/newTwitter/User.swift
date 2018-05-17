@@ -17,9 +17,8 @@ class User {
     private var password: String = String()
     private var email: String = String()
     private var name: String = String()
-    
-    //private var profilePicture: File
-    //private var profileSite: ProfileSite
+    private var profilePicture: File
+    private var profileSite: ProfileSite
     
     init?(userName: String, password: String, email: String, name: String) {
         let userNameError = self.setUserName(userName: userName)
