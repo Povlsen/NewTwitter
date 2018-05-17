@@ -64,6 +64,7 @@
 				FF88CEE620AD555A00C7F8A8 /* User.swift */,
 				FF88CEE420AD553E00C7F8A8 /* Post and subs.swift */,
 				FF4C207820AC2E4B002FFBE6 /* main.swift */,
+				FFB4F4B620AC3A8B00BEB8EF /* User.swift */,
 			);
 			path = newTwitter;
 			sourceTree = "<group>";

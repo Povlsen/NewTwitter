@@ -55,9 +55,9 @@ class Photo : Post{
 }
 
 class TextPhoto : Post{
-    var file: String
+    var file: File
     var text: String
-    init(text: String, file: String, type: PostType) {
+    init(text: String, file: File, type: PostType) {
         self.text = text
         self.file = file
         super.init(type: type)
