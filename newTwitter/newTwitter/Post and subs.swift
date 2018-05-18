@@ -4,7 +4,7 @@
 import Foundation
 
 enum PostType{
-    case retweet, comment, original
+    case rePost, comment, original
 }
 
 class Post {
