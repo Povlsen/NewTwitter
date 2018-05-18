@@ -28,6 +28,10 @@ class File {
     func getFullPath() -> String {
         return "\(self.server.getServer)\(self.share.getShare)\(self.path)\(self.fileName)"
     }
+    
+    func getUploadDate() -> Date {
+        return self.uploadDate
+    }
 }
 
 class FileType {
