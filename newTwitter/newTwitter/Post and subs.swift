@@ -30,6 +30,7 @@ class Post {
         return poster
     }
     
+<<<<<<< HEAD
     func rePost(text: String?, rePoster: User) {
         if let t = text {
             Text(text: t, type: .rePost, poster: rePoster)
@@ -37,8 +38,12 @@ class Post {
             Post(type: .rePost, poster: rePoster, parrentPost: self)
         }
         
+=======
+    func rePost(rePoster: User) {
+        Post(type: .retweet, poster: rePoster, parrentPost: self)
+        self.rePosts += 1
+>>>>>>> Post
     }
-
 }
 
 class Text : Post {
@@ -51,6 +56,11 @@ class Text : Post {
     convenience init(text: String, type: PostType, poster: User, parrentPost: Post) {
         self.init(text: text, type: type, poster: poster)
         super.parent = parrentPost
+    }
+    
+    func rePost(text: String, rePoster: User) {
+        // Text(text: text, type: .retweet, poster: rePoster, parrentPost: )
+        self.rePosts += 1
     }
     
     func getText () -> String{
