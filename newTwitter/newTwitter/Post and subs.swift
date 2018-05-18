@@ -31,7 +31,7 @@ class Post {
     }
     
     func rePost(rePoster: User) {
-        Post(type: .retweet, poster: rePoster, parrentPost: self)
+        Post(type: .rePost, poster: rePoster, parrentPost: self)
         self.rePosts += 1
     }
 }
