@@ -4,7 +4,7 @@
 import Foundation
 
 enum PostType{
-    case retweet, comment, original
+    case rePost, comment, original
 }
 
 class Post {
@@ -32,9 +32,9 @@ class Post {
     
     func rePost(text: String?, rePoster: User) {
         if let t = text {
-            Text(text: t, type: .retweet, poster: rePoster)
+            Text(text: t, type: .rePost, poster: rePoster)
         } else {
-            Post(type: .retweet, poster: rePoster, parrentPost: self)
+            Post(type: .rePost, poster: rePoster, parrentPost: self)
         }
         
     }
