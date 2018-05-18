@@ -8,13 +8,13 @@ enum PostType{
 }
 
 class Post {
-    var likes: Int = 0
+    private var likes: Int = 0
     var rePosts: Int = 0
-    var comments: Int = 0
-    var poster: User
-    var type: PostType
+    private var comments: Int = 0
+    private var poster: User
+    private var type: PostType
     var parent: Post?
-    var mostRecentEventPost: Post?
+    private var mostRecentEventPost: Post?
     
     init(type: PostType, poster: User) {
         self.type = type
@@ -37,7 +37,7 @@ class Post {
 }
 
 class Text : Post {
-    var text: String
+    private var text: String
     init(text: String, type: PostType, poster: User){
         self.text = text
         super.init(type:type, poster: poster)
@@ -62,7 +62,7 @@ class Text : Post {
 }
 
 class Photo : Post{
-    var file: File
+    private var file: File
     init(file: File, type: PostType, poster: User){
         self.file = file
         super.init(type:type, poster: poster)
@@ -76,8 +76,8 @@ class Photo : Post{
 }
 
 class TextPhoto : Post {
-    var file: File
-    var text: String
+    private var file: File
+    private var text: String
     init(text: String, file: File, type: PostType, poster: User) {
         self.text = text
         self.file = file
