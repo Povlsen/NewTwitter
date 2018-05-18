@@ -30,19 +30,9 @@ class Post {
         return poster
     }
     
-<<<<<<< HEAD
-    func rePost(text: String?, rePoster: User) {
-        if let t = text {
-            Text(text: t, type: .rePost, poster: rePoster)
-        } else {
-            Post(type: .rePost, poster: rePoster, parrentPost: self)
-        }
-        
-=======
     func rePost(rePoster: User) {
         Post(type: .retweet, poster: rePoster, parrentPost: self)
         self.rePosts += 1
->>>>>>> Post
     }
 }
 
